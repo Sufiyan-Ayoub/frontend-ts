@@ -1,10 +1,12 @@
+'use client'
 import { AppStore, Store } from "@/store";
 import { Children } from "@/types";
 import createStore from "@zuzjs/store";
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import Authenticate from "@/app/oauth";
 
 const Main : FC<Children> = ({ children }) => {
-    
+
     return (
         <div className="app">
             {children}
@@ -14,10 +16,15 @@ const Main : FC<Children> = ({ children }) => {
 }
 
 const AppLayout: FC<Children> = ({ children }) => {
-     const { Provider } = createStore(Store.App, AppStore.App)
+    const { Provider } = createStore(Store.App, AppStore.App)
     
+    useEffect(() => {
+
+    }, [])
+
     return (
         <Provider>
+            <Authenticate />
             <Main>{children}</Main>
         </Provider>
     )
