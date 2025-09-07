@@ -110,6 +110,8 @@
   --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.553 0.013 58.071);
+  --sidebar-width: calc(var(--spacing) * 72);
+  --header-height: calc(var(--spacing) * 12);
 }
 
 @layer base {
@@ -118,5 +120,13 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  button, a {
+    @apply cursor-pointer;
+  }
+
+  nextjs-portal{
+    @apply hidden;
   }
 }

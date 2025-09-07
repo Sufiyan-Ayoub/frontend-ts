@@ -1,13 +1,11 @@
 'use client'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 const Authenticate = () => {
     
     useEffect(() => {}, [])
 
-    return (
-        <div>Auth</div>
-    )
+    return null;
 }
 
 export default Authenticate 
